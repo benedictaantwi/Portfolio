@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Abel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("hidden");
+        }
+
+        window.addEventListener("scroll", function () {
+            const header = document.getElementById("header");
+            let scrollPosition = window.scrollY;
+            let opacity = 1 - Math.min(scrollPosition / 300, 0.5);
+            header.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+        });
+    </script>
+    <style>
+        @keyframes spin {
+            from {
+                transform: rotateY(0deg);
+            }
+
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+    </style>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="m-0 p-0 font-[Open Sans]">
+    <header id="header"
+        class="w-full bg-[#1C1C1E] text-white shadow-md fixed top-0 left-0 right-0 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold">Classy</a>
+
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden focus:outline-none" onclick="toggleMenu()">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+
+            <!-- Navigation Links -->
+            <nav class="hidden lg:flex space-x-8">
+                <a href="#" class="hover:text-gray-400">Home</a>
+                <a href="#about" class="hover:text-gray-400">About</a>
+                <a href="#resume" class="hover:text-gray-400">Resume</a>
+                <a href="#publications" class="hover:text-gray-400">Publications</a>
+                <a href="#" class="hover:text-gray-400">Projects</a>
+                <a href="#" class="hover:text-gray-400">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section
+            class="flex flex-col lg:flex-row items-center justify-center h-screen p-8 py-[6rem] bg-gray-800 max-lg:pt-[14rem] max-lg:flex-col-reverse">
+            <!-- Left Section: Intro Card -->
+            <div class="w-full lg:w-3/5">
+                <div class="m-auto lg:max-w-[70%] bg-white p-6 shadow-lg rounded-lg m-auto lg:mr-[-50px] lg:h-80 flex">
+                    <div class="m-auto">
+                        
+                        
+                        <h1 class="text-3xl font-bold text-[#0F172A]">Benedicta Welcome's you here</h1>
+                        <p class=" text-lg text-gray-500">Explore my journey, skills, and projects.</p>
+                        <blockquote class="mt-6 italic text-gray-500 border-l-4 border-gray-300 pl-4">
+                            Here we believe that Geospatial technology empowers humanity to understand the past, navigate the
+                            present, and shape the future with precision and purpose.
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Section: 3D Spinning Atlas -->
+            <div class="w-full lg:w-2/5 flex justify-center items-center">
+                <div class="w-80 h-80 rounded-full flex justify-center items-center lg:w-[30rem]"
+                    style="animation: spin 10s linear infinite;">
+                    <img src="images/11383066.png" alt="globe image">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 bg-[#0F172A] text-white">
+            <div class="container mx-auto px-8 lg:flex lg:items-center lg:justify-between">
+                <!-- Left Side: Image -->
+                <div class="w-full lg:w-2/5 flex justify-center mb-8 lg:mb-0">
+                    <img src="images/UBCMCsch24-16.jpg" alt="Profile Image"
+                        class="rounded-full shadow-xl border-4 border-gray-500">
+                </div>
+
+                <!-- Right Side: Text -->
+                <div class="w-full lg:w-3/5 lg:ml-16">
+                    <h2 class="text-4xl font-bold text-white">Who Am I?</h2>
+                    <p class="mt-4 text-lg text-gray-300">
+                        Hi there! I am a Geomatic Engineer passionate about all things geospatial, from programming with
+                        Python and R to exploring the world of GIS and remote sensing. My journey has taken me through
+                        exciting experiences, like using RTK GPS for precise geospatial data collection and helping
+                        improve project timelines with better planning accuracy.
+                    </p>
+                    <p class="mt-4 text-lg text-gray-300">As a Cohort Representative for the Mastercard Foundation
+                        Scholars Program and a former President of the Geomatic Engineering Students Association, I’ve
+                        had the chance to lead, collaborate, and build communities while driving meaningful change. I
+                        thrive on using tools like ArcGIS and remote sensing to solve complex problems and deliver
+                        solutions that truly make an impact.</p>
+                    <p class="mt-4 text-gray-600 italic">
+                        "Whether it’s mapping, analyzing data, or diving into new challenges, I’m always eager to learn,
+                        grow, and share my knowledge. Let’s connect and explore the geospatial world together!"
+                    </p>
+                    <a href="#resume"
+                        class="mt-6 inline-block bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">View
+                        My Resume</a>
+                </div>
+            </div>
+        </section>
+        <section id="resume" class="scroll-mt-24 py-20 bg-[#0A192F] text-white">
+            <div class="container mx-auto px-8 max-w-6xl">
+                <h2 class="text-4xl font-bold text-center mb-8">Resume</h2>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold">Summary of Qualifications</h3>
+                    <p class="mt-4 text-gray-300">Skilled in geospatial programming (Python, R), GIS, and remote sensing
+                        with experience in RTK GPS data collection. Strong leadership in academic and professional
+                        spaces.</p>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold text-blue-400 border-b-2 border-blue-500 pb-2">Technical Skills
+                    </h3>
+                    <ul class="mt-4 text-gray-300 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <li>🟢 Python, R, Excel, Power BI</li>
+                        <li>🟢 ArcGIS Pro, QGIS, Google Earth Engine</li>
+                        <li>🟢 RTK GPS, AutoCAD, Surpac</li>
+                        <li>🟢 Spatial Data Analysis & Visualization</li>
+                    </ul>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold text-blue-400 border-b-2 border-blue-500 pb-2">Education</h3>
+                    <p class="mt-4 text-gray-300">🎓 <strong>Master of Geomatics for Environmental Management</strong>,
+                        UBC (Expected Apr 2025)</p>
+                    <p class="mt-2 text-gray-300">Research on SAR technology & mapping mangrove ecosystems in
+                        Madagascar.</p>
+                    <p class="mt-4 text-gray-300">🎓 <strong>BSc in Geomatic Engineering</strong>, University of Mines
+                        and Technology, Ghana (2019 - 2023)</p>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold text-blue-400 border-b-2 border-blue-500 pb-2">Professional
+                        Experience</h3>
+                    <ul class="mt-4 text-gray-300">
+                        <li class='flex justify-between'><strong>✏️ Writer & Editor</strong> <span
+                                class='text-gray-400'>Dec 2024 - Present</span></li>
+                        <ul class='ml-6 text-gray-400 list-disc'>
+                            <li>Write and edit high-quality articles on GIS, remote sensing, and geospatial trends.</li>
+                            <li>Collaborate with experts to produce engaging, well-researched publications.</li>
+                            <li>Support knowledge sharing and innovation in the geospatial sector.</li>
+                            <li>Edit and proofread articles for clarity, accuracy, and industry relevance.</li>
+                            <li>Collaborate with professionals to highlight emerging GIS innovations.</li>
+                        </ul>
+                        </li>
+                        <li class='flex justify-between'><strong>🛠 Junior Surveyor</strong> <span
+                                class='text-gray-400'>Nov 2023 - Jul 2024</span></li>
+                        <ul class='ml-6 text-gray-400 list-disc'>
+                            <li>Achieved high-precision geospatial data accuracy (±2 cm) using RTK GPS surveying.</li>
+                            <li>Compiled spatial data and generated 50+ maps, improving mining reports' accuracy.</li>
+                            <li>Enhanced coordination by providing spatial insights, reducing field-team errors.</li>
+                            <li>Processed and analyzed survey data to support mining operations.</li>
+                            <li>Collaborated with engineers to ensure accurate mapping and project execution.</li>
+                        </ul>
+                        </li>
+                        <li class='flex justify-between'><strong>📍 Intern (Surveyor)</strong> <span
+                                class='text-gray-400'>2022</span></li>
+                        <ul class='ml-6 text-gray-400 list-disc'>
+                            <li>Performed land surveys and created cadastral plans using AutoCAD, ArcMap, and QGIS.</li>
+                            <li>Partnered with UBC Sauder to organize free entrepreneurship courses for SMEs.</li>
+                            <li>Optimized land registration processes, ensuring compliance with legal standards.</li>
+                            <li>Worked with GIS software to update spatial databases for land management.</li>
+                            <li>Conducted field surveys to validate land parcel boundaries.</li>
+                        </ul>
+                        </li>
+                        <li class='flex justify-between'><strong>🌍 Geospatial Intern</strong> <span
+                                class='text-gray-400'>2022</span></li>
+                        <ul class='ml-6 text-gray-400 list-disc'>
+                            <li>Conducted parcel boundary mapping using RTK and static GPS technology.</li>
+                            <li>Streamlined spatial data integration using ArcMap, QGIS, and Google Earth.</li>
+                            <li>Resolved complex land disputes by analyzing and validating boundary alignments.</li>
+                            <li>Developed maps and spatial visualizations for environmental projects.</li>
+                            <li>Assisted in data collection and field surveys for geospatial research.</li>
+                        </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold text-blue-400 border-b-2 border-blue-500 pb-2">Leadership &
+                        Volunteering</h3>
+                    <ul class="mt-4 text-gray-300">
+                        <li>🏆 Cohort Representative – Mastercard Foundation Scholars (UBC)</li>
+                        <li>📢 Former President – Geomatic Engineering Students’ Association</li>
+                        <li>📅 Event Coordinator – GEO Week 2022, Ghana</li>
+                        <li>🌎 Member – Esri Young Professionals Network</li>
+                    </ul>
+                </div>
+
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold text-blue-400 border-b-2 border-blue-500 pb-2">Certifications &
+                        Professional Development</h3>
+                    <ul class="mt-4 text-gray-300">
+                        <li>✅ Esri MOOCs (Cartography, Spatial Data Science)</li>
+                        <li>✅ Ghana 1000 Program – Data Analytics</li>
+                        <li>✅ Mental Health Studies (Alison)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications" class="py-20 bg-[#0F172A] text-white">
+            <div class="container mx-auto px-8 max-w-6xl">
+                <h2 class="text-4xl font-bold text-center mb-8">Publications</h2>
+                <p class="text-lg text-gray-300 text-center max-w-3xl mx-auto mb-12">
+                    As a <strong>Writer & Editor</strong> at GoGeomatics Canada, I research, write, and edit articles on
+                    geospatial technologies,
+                    GIS, remote sensing, and mapping innovations.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-[#1C2C3A] p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                        <img src="images/map.jpg" alt="Vancouver Sustainability"
+                            class="rounded-lg mb-4 w-full h-48 object-cover">
+                        <h3 class="text-2xl font-semibold text-blue-400">Vancouver’s Future: Sustainability Driven by
+                            Geospatial Techniques</h3>
+                        <p class="mt-2 text-gray-300">An exploration of how geospatial technology is shaping Vancouver’s
+                            sustainability efforts, from urban planning to environmental conservation.</p>
+                        <a href="https://gogeomatics.ca/vancouvers-future-sustainability-driven-by-geospatial-techniques/"
+                            target="_blank" class="mt-4 inline-block text-blue-500 hover:underline">Read More</a>
+                    </div>
+                    <div class="bg-[#1C2C3A] p-6 rounded-lg shadow-lg transition-transform transform hover:scale-105">
+                        <img src="images/blast.png" alt="LiDAR CANEX 2025" class="rounded-lg mb-4 w-full h-48 object-cover">
+                        <h3 class="text-2xl font-semibold text-blue-400">LiDAR CANEX 2025: Keeping it Classy and Having
+                            a Blast with NV5</h3>
+                        <p class="mt-2 text-gray-300">An inside look at LiDAR CANEX 2025, where NV5 showcased
+                            cutting-edge LiDAR innovations and their impact on geospatial technology and infrastructure
+                            development.</p>
+                        <a href="https://gogeomatics.ca/lidar-canex-2025-keeping-it-classy-and-having-a-blast-with-nv5/"
+                            target="_blank" class="mt-4 inline-block text-blue-500 hover:underline">Read More</a>
+                    </div>
+                </div>
+
+                <p class="text-center mt-12 text-lg text-gray-300">
+                    Explore more of my articles on the <a href="https://gogeomatics.ca/" target="_blank"
+                        class="text-blue-400 hover:underline">GoGeomatics Canada Website</a>.
+                </p>
+            </div>
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>
