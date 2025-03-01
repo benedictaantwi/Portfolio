@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoVista</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Abel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("hidden");
+        }
+
+        window.addEventListener("scroll", function () {
+            const header = document.getElementById("header");
+            let scrollPosition = window.scrollY;
+            let opacity = 1 - Math.min(scrollPosition / 300, 0.5);
+            header.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+        });
+    </script>
+    <style>
+        @keyframes spin {
+            from {
+                transform: rotateY(0deg);
+            }
+
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+    </style>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="m-0 p-0 font-[Open Sans]">
+    <header id="header"
+        class="w-full bg-[#1C1C1E] text-white shadow-md fixed top-0 left-0 right-0 transition-all duration-300 z-10">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold">GeoVista</a>
+
+            <button class="lg:hidden focus:outline-none" onclick="toggleMenu()" id="menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+            <nav class="hidden lg:flex space-x-8">
+                <a href="index.html" class="hover:text-gray-400">Home</a>
+                <a href="about.html" class="hover:text-gray-400">About</a>
+                <a href="resume.html" class="hover:text-gray-400">Resume</a>
+                <a href="publication.html" class="hover:text-gray-400">Publications</a>
+                <a href="project.html" class="hover:text-gray-400">Projects</a>
+                <a href="capstone.html" class="hover:text-gray-400">Capstone</a>
+                <a href="contact.html" class="hover:text-gray-400">Contact</a>
+            </nav>
+        </div>
+        <nav id="menu"
+            class="hidden flex flex-col bg-[#1C1C1E] text-white py-4 px-4 space-y-2 absolute top-16 right-4 w-48 shadow-lg rounded-lg lg:hidden">
+            <a href="index.html" class="py-2 px-4 hover:bg-gray-800">Home</a>
+            <a href="about.html" class="py-2 px-4 hover:bg-gray-800">About</a>
+            <a href="resume.html" class="py-2 px-4 hover:bg-gray-800">Resume</a>
+            <a href="publication.html" class="py-2 px-4 hover:bg-gray-800">Publications</a>
+            <a href="project.html" class="py-2 px-4 hover:bg-gray-800">Projects</a>
+            <a href="capstone.html" class="py-2 px-4 hover:bg-gray-800">Capstone</a>
+            <a href="contact.html" class="py-2 px-4 hover:bg-gray-800">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="capstone" class="py-20 bg-[#0A192F] text-white">
+            <div class="container mx-auto px-8 max-w-6xl">
+                <h2 class="text-4xl font-bold text-center mb-8">Project Abstract</h2>
+                <p class="text-lg text-gray-300 text-center max-w-3xl mx-auto mb-12 text-justify">
+                    Monitoring land cover changes, particularly in sensitive coastal ecosystems, is essential for
+                    sustainable management and conservation efforts. This study investigates land cover transitions in
+                    Ambanja Bay, Madagascar, using a multi-sensor classification approach that integrates Sentinel-1
+                    Synthetic Aperture Radar (SAR) and Sentinel-2 optical imagery. Sentinel-1 backscatter data (VV, VH,
+                    VV/VH ratio, and Radar Vegetation Index (RVI)) were combined with Sentinel-2-derived Normalized
+                    Difference Vegetation Index (NDVI) to improve classification accuracy.
+                    A Random Forest classifier was applied to both a SAR-only dataset and a SAR-optical fused dataset,
+                    with accuracy assessments conducted using a confusion matrix and overall accuracy metrics. Results
+                    indicate that the SAR-only classification achieved an overall accuracy of 60%, with notable
+                    misclassifications among vegetation classes. In contrast, the fusion-based classification
+                    significantly improved performance, achieving 94% accuracy, demonstrating the advantages of
+                    integrating spectral and structural data for land cover mapping.
+                    Additionally, a Sankey diagram was employed to visualize land cover transitions between 2019 and
+                    2024, revealing changes in mangrove extent, vegetation shifts, and land conversion patterns. These
+                    findings underscore the value of multi-sensor data fusion in remote sensing applications,
+                    particularly for monitoring dynamic coastal ecosystems. The study provides a robust framework for
+                    land cover classification, contributing to improved resource management and conservation planning.
+
+                </p>
+                <section id="capstone" class="py-20 bg-[#0A192F] text-white">
+                    <div class="container mx-auto px-8 max-w-6xl">
+                        <h2 class="text-4xl font-bold text-center mb-8">Project Results</h2>
+                        <p class="text-lg text-gray-300 text-center max-w-3xl mx-auto mb-12">
+                        </p>
+
+                        <!-- Classified Maps -->
+                        <div class="mb-8 text-center">
+                            <h3 class="text-3xl font-semibold text-blue-400 border-b-2 border-white-500 pb-2">Land Cover
+                                Map</h3>
+                            <img src="images/Fusion_map.jpg" alt="Classified Maps 2019-2024"
+                                class="w-full rounded-lg shadow-lg">
+                            <p class="text-gray-400 text-sm mt-2 italic">Figure 1: Classified land cover maps of Ambanja
+                                Bay, Madagascar, for 2019 and 2024. The maps illustrate land cover transitions,
+                                including mangrove changes and vegetation shifts.</p>
+                        </div>
+
+                        <!-- Sankey Diagram (Static Image) -->
+                        <div class="mb-8 text-center">
+                            <h3 class="text-3xl font-semibold text-blue-400 border-b-2 border-white-500 pb-2">Land Cover
+                                Change (Sankey Diagram)</h3>
+                            <img src="images/newplot.png" alt="Sankey Diagram for Land Cover Change"
+                                class="w-full rounded-lg shadow-lg">
+                            <p class="text-gray-400 text-sm mt-2 italic">Figure 2: Sankey diagram visualizing land cover
+                                transitions between 2019 and 2024, highlighting the extent of mangrove conservation,
+                                vegetation loss, and land conversion patterns.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GeoVista</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=ABeeZee:ital@0;1&family=Abel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        function toggleMenu() {
+            document.getElementById("menu").classList.toggle("hidden");
+        }
+
+        window.addEventListener("scroll", function () {
+            const header = document.getElementById("header");
+            let scrollPosition = window.scrollY;
+            let opacity = 1 - Math.min(scrollPosition / 300, 0.5);
+            header.style.backgroundColor = `rgba(0, 0, 0, ${opacity})`;
+        });
+    </script>
+    <style>
+        @keyframes spin {
+            from {
+                transform: rotateY(0deg);
+            }
+
+            to {
+                transform: rotateY(360deg);
+            }
+        }
+    </style>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body class="m-0 p-0 font-[Open Sans]">
+    <header id="header"
+        class="w-full bg-[#1C1C1E] text-white shadow-md fixed top-0 left-0 right-0 transition-all duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold">GeoVista</a>
+
+            <button class="lg:hidden focus:outline-none" onclick="toggleMenu()" id="menu-button">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </button>
+
+            <nav class="hidden lg:flex space-x-8">
+                <a href="index.html" class="hover:text-gray-400">Home</a>
+                <a href="about.html" class="hover:text-gray-400">About</a>
+                <a href="resume.html" class="hover:text-gray-400">Resume</a>
+                <a href="publication.html" class="hover:text-gray-400">Publications</a>
+                <a href="project.html" class="hover:text-gray-400">Projects</a>
+                <a href="capstone.html" class="hover:text-gray-400">Capstone</a>
+                <a href="contact.html" class="hover:text-gray-400">Contact</a>
+            </nav>
+        </div>
+        <nav id="menu"
+            class="hidden flex flex-col bg-[#1C1C1E] text-white py-4 px-4 space-y-2 absolute top-16 right-4 w-48 shadow-lg rounded-lg lg:hidden">
+            <a href="index.html" class="py-2 px-4 hover:bg-gray-800">Home</a>
+            <a href="about.html" class="py-2 px-4 hover:bg-gray-800">About</a>
+            <a href="resume.html" class="py-2 px-4 hover:bg-gray-800">Resume</a>
+            <a href="publication.html" class="py-2 px-4 hover:bg-gray-800">Publications</a>
+            <a href="project.html" class="py-2 px-4 hover:bg-gray-800">Projects</a>
+            <a href="capstone.html" class="py-2 px-4 hover:bg-gray-800">Capstone</a>
+            <a href="contact.html" class="py-2 px-4 hover:bg-gray-800">Contact</a>
+        </nav>
+    </header>
+
+    <main class="min-h-[100vh] pt-8">
+        <section id="projects" class="py-5 bg-[#0A192F] text-white ">
+            <div class="container mx-auto px-8 max-w-6xl">
+                <h2 class="text-4xl font-bold text-center mb-8">Projects</h2>
+                <p class="text-lg text-gray-300 text-center max-w-3xl mx-auto mb-12">
+                    A collection of geospatial projects covering GIS, remote sensing, and spatial analysis.
+                </p>
+
+                <div class="mb-16">
+                    <h3 class="text-3xl font-semibold text-blue-400 border-b-2 border-blue-500 pb-2">GIS Projects</h3>
+                    <p class="mt-4 text-gray-300">Exploring spatial data through GIS-based mapping, land use
+                        classification, and suitability analysis.</p>
+                    <div class="mt-6 bg-[#1C2C3A] p-6 rounded-lg shadow-lg">
+                        <h4 class="text-2xl font-semibold text-blue-400">Suitability and Overlay Analysis for Marine
+                            Sanctuaries</h4>
+                        <p class="mt-2 text-gray-300">This GIS-based project focused on marine spatial planning in
+                            Hawai’i to identify suitable locations for marine sanctuaries, protecting humpback whale
+                            habitats through suitability modeling.</p>
+                        <ul class="list-disc pl-6 mt-4 text-gray-300">
+                            <li>Applied GIS overlay techniques to analyze and rank marine habitats.</li>
+                            <li>Developed a weighted suitability model based on habitat size, whale sightings, and
+                                vessel traffic.</li>
+                            <li>Identified top 5 most suitable locations for sanctuary expansion.</li>
+                        </ul>
+                        <img src="images/BAntwi_Lab3_suitable analysis.jpg" alt="Suitability Analysis Map"
+                            class="rounded-lg mt-4 shadow-lg">
+                    </div>
+                    <div class="mt-6 bg-[#1C2C3A] p-6 rounded-lg shadow-lg">
+                        <h4 class="text-2xl font-semibold text-blue-400">Cost Path Analysis for Grizzly Bears</h4>
+                        <p class="mt-2 text-gray-300">This GIS project aimed to determine the least-cost path for
+                            grizzly bears moving across a fragmented landscape, ensuring optimal corridors for wildlife
+                            movement.</p>
+                        <ul class="list-disc pl-6 mt-4 text-gray-300">
+                            <li>Utilized cost-distance analysis to evaluate terrain difficulty and habitat barriers.
+                            </li>
+                            <li>Incorporated road networks and land cover classifications into the model.</li>
+                            <li>Generated least-cost paths to identify viable wildlife corridors.</li>
+                        </ul>
+                        <img src="images/BAntwi_Map.jpg" alt="Cost Path Analysis Map" class="rounded-lg mt-4 shadow-lg">
+
+
+                    </div>
+                    <div class="mt-6 bg-[#1C2C3A] p-6 rounded-lg shadow-lg">
+                        <h4 class="text-2xl font-semibold text-blue-400">Spatial Interpolation and Visualization of
+                            LiDAR</h4>
+                        <p class="mt-2 text-gray-300">This project involved creating Digital Elevation Models (DEMs)
+                            using various interpolation techniques on LiDAR data from the UBC Malcolm Knapp Research
+                            Forest.</p>
+                        <ul class="list-disc pl-6 mt-4 text-gray-300">
+                            <li>Compared **Natural Neighbor, Spline, and IDW interpolation** methods.</li>
+                            <li>Analyzed spatial accuracy by comparing interpolated DEMs with reference datasets.
+                            </li>
+                            <li>Identified Natural Neighbor as the most stable interpolation method.</li>
+                        </ul>
+                        <img src="images/Layout2.jpg" alt="LiDAR Interpolation Map" class="rounded-lg mt-4 shadow-lg">
+                    </div>
+                    <div class="mt-6 bg-[#1C2C3A] p-6 rounded-lg shadow-lg">
+                        <h4 class="text-2xl font-semibold text-blue-400">Terrain Analysis and Riparian Area Management
+                        </h4>
+                        <p class="mt-2 text-gray-300">
+                            This project focused on defining reserve (no-harvest) areas in a riparian forest using
+                            GIS-based hydrological modeling.
+                            Using a Digital Elevation Model (DEM), stream classification, and buffer analysis, the
+                            project aimed to balance ecological
+                            conservation with forest resource management.
+                        </p>
+                        <ul class="list-disc pl-6 mt-4 text-gray-300">
+                            <li>Modeled stream networks using **flow direction and accumulation analysis**.</li>
+                            <li>Defined **Riparian Management Areas (RMAs)** based on stream classification.</li>
+                            <li>Calculated buffer zones for no-harvest areas to protect sensitive watersheds.</li>
+                            <li>Assessed the effectiveness of the buffer zones in **preventing runoff impacts on
+                                streams**.</li>
+                        </ul>
+                        <img src="images/Main_map.jpg" alt="Terrain Analysis Map" class="rounded-lg mt-4 shadow-lg">
+                    </div>
+        </section>
+        <section id="remote-sensing" class="py-5 bg-[#0A192F] text-white">
+            <div class="container mx-auto px-8 max-w-6xl ">
+                <div class="mb-16">
+                    <h3 class="text-3xl font-semibold text-blue-400 border-b-2 border-blue-500 pb-2">Remote Sensing
+                        Projects
+
+                    </h3>
+                    <p class="mt-4 text-gray-300">Exploring satellite imagery, LiDAR data, and environmental monitoring
+                        through advanced remote sensing
+                        techniques.</p>
+                    <div class="mt-6 bg-[#1C2C3A] p-6 rounded-lg shadow-lg">
+
+                        <h4 class="text-2xl font-semibold text-blue-400">R for Remote
+                            Sensing Data Analysis</h4>
+                        <p class="mt-2 text-gray-300">This project focused on using R programming for handling and
+                            analyzing
+                            spatial data, covering vector and raster spatial data processing in GIS and remote sensing
+                            applications.</p>
+                        <ul class="list-disc pl-6 mt-4 text-gray-300">
+                            <li>Indexing spatial data for extraction, transformation, and querying.</li>
+                            <li>Manipulating geospatial datasets using the **sf package**.</li>
+                            <li>Visualizing spatial data with **ggplot2** for thematic maps and overlays.</li>
+                            <li>Writing custom functions to automate geospatial analysis.</li>
+                            <li>Processing temperature and humidity datasets for environmental insights.</li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 bg-[#1C2C3A] p-6 rounded-lg shadow-lg">
+
+                        <h4 class="text-2xl font-semibold text-blue-400">The EMS and Basic Image
+                            Analysis in ENVI</h4>
+                        <p class="mt-2 text-gray-300">This project explored the Electromagnetic Spectrum (EMS) and its
+                            applications in remote sensing using ENVI 6.0 software. It focused on spectral properties,
+                            image
+                            processing techniques, and visualization of different spectral bands.</p>
+                        <ul class="list-disc pl-6 mt-4 text-gray-300">
+                            <li>Analyzed spectral reflectance and how different materials interact with electromagnetic
+                                waves.
+                            </li>
+                            <li>Created and interpreted **true and false color composites** for various applications.
+                            </li>
+                            <li>Worked with **panchromatic and high-resolution imagery** for detailed analysis.</li>
+                            <li>Performed **image enhancement and histogram analysis** to improve data interpretation.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 bg-[#1C2C3A] p-6 rounded-lg shadow-lg">
+
+                        <h4 class="text-2xl font-semibold text-blue-400">Lidar-Based Forest
+                            Attribute Estimation</h4>
+                        <p class="mt-2 text-gray-300">This project utilized lidar point cloud data from the Alex Fraser
+                            Research
+                            Forest to estimate key forest attributes such as Above Ground Biomass (AGB) and Dominant
+                            Tree
+                            Height.</p>
+                        <ul class="list-disc pl-6 mt-4 text-gray-300">
+                            <li>Developed **Digital Elevation Model (DEM)** and **Canopy Height Model (CHM)** at 2m
+                                resolution.
+                            </li>
+                            <li>Extracted **point cloud metrics** from lidar tiles for plot locations.</li>
+                            <li>Built predictive models for **forest biomass and tree height** using **forward variable
+                                selection**.</li>
+                            <li>Created **scatter plots** comparing predicted vs measured values for model validation.
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="mt-6 bg-[#1C2C3A] p-6 rounded-lg shadow-lg">
+
+                        <h4 class="text-2xl font-semibold text-blue-400">Measuring Spectra with
+                            the ASD FieldSpecPro</h4>
+                        <p class="mt-2 text-gray-300">This project focused on field spectral measurements using the ASD
+                            FieldSpecPro spectrometer to analyze the spectral properties of various materials and
+                            simulate mixed
+                            pixel interactions.</p>
+                        <ul class="list-disc pl-6 mt-4 text-gray-300">
+                            <li>Collected **broadleaf, conifer, dead vegetation, soil, and rock** samples for spectral
+                                analysis.
+                            </li>
+                            <li>Used **ViewSpecPro software** to calibrate and average spectral readings.</li>
+                            <li>Simulated **mixed pixels** to understand spectral interactions in satellite imagery.
+                            </li>
+                            <li>Calculated **NDVI and NDWI** to analyze vegetation health and water content.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="landscape-ecology" class="py-5 bg-[#0A192F] text-white">
+            <div class="container mx-auto px-8 max-w-6xl">
+
+                <div class="mb-16">
+                    <h3 class="text-3xl font-semibold text-blue-400 border-b-2 border-blue-500 pb-2">Landscape Ecology
+
+                    </h3>
+                    <p class="mt-4 text-gray-300">My expertise in **Landscape Ecology** revolves around understanding
+                        spatial patterns, habitat
+                        connectivity, and the dynamics of ecosystems. I use **geospatial tools and modeling techniques**
+                        to
+                        analyze how landscapes change over time and how different factors influence ecological balance.
+                    </p>
+
+                    <div class="mt-6 bg-[#1C2C3A] p-6 rounded-lg shadow-lg">
+
+                        <h4 class="text-2xl font-semibold text-blue-400">Key Skills in
+                            Landscape Ecology</h4>
+
+                        <ul class="list-disc pl-6 mt-4 text-gray-300">
+                            <li>Assessing habitat fragmentation and connectivity using GIS.</li>
+                            <li>Analyzing landscape metrics and spatial patterns with **Fragstats**.</li>
+                            <li>Developing **corridor modeling and least-cost path analysis** for wildlife movement.
+                            </li>
+                            <li>Mapping **land use changes and ecological dynamics** over time.</li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section id="geospatial-data-analysis" class="py-5 bg-[#0A192F] text-white">
+            <div class="container mx-auto px-8 max-w-6xl">
+                <div class="mb-16">
+                    <h3 class="text-3xl font-semibold text-blue-400 border-b-2 border-blue-500 pb-2">
+                        Geospatial Data Analysis
+                    </h3>
+                    <p class="mt-4 text-gray-300">Leveraging Python and ArcPy for advanced geospatial analysis, data
+                        automation, and spatial modeling
+                        to support decision-making in environmental and urban studies.
+                    </p>
+
+                    <div class="mt-6 bg-[#1C2C3A] p-6 rounded-lg shadow-lg">
+
+                        <h4 class="text-2xl font-semibold text-blue-400">Key Skills in
+                            Geospatial Data Analysis</h4>
+                        <ul class="list-disc pl-6 mt-4 text-gray-300">
+                            <li>Processing and analyzing geospatial datasets using **Python (geopandas, rasterio,
+                                shapely)**.</li>
+                            <li>Automating GIS workflows with **ArcPy and ModelBuilder**.</li>
+                            <li>Performing spatial joins, overlays, and geostatistical analyses.</li>
+                            <li>Building spatial data pipelines for large-scale geospatial processing.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="spatial-data-analysis" class="py-5 bg-[#0A192F] text-white">
+            <div class="container mx-auto px-8 max-w-6xl">
+
+                <div class="mb-16">
+                    <h3 class="text-3xl font-semibold text-blue-400 border-b-2 border-blue-500 pb-2">
+                        Linear Regression Models and Spatial Statistics
+                    </h3>
+                    <p class="mt-4 text-gray-300">Spatial data analysis involves extracting meaningful insights from
+                        geographic data through advanced
+                        statistical, geospatial, and machine learning techniques. My expertise covers a wide range of
+                        analytical methods for understanding patterns, relationships, and trends in spatial datasets.
+                    </p>
+                    <div class="mt-6 bg-[#1C2C3A] p-6 rounded-lg shadow-lg">
+
+                        <h4 class="text-2xl font-semibold text-blue-400">Key Skills in
+                            Spatial Data Analysis</h4>
+                        <ul class="list-disc pl-6 mt-4 text-gray-300">
+                            <li>Spatial statistics and predictive modeling for geospatial patterns.</li>
+                            <li>Geostatistical interpolation techniques (Kriging, IDW) for environmental modeling.</li>
+                            <li>Spatial clustering and hotspot analysis to detect spatial trends.</li>
+                            <li>Time-series analysis of geospatial datasets for change detection.</li>
+                            <li>Machine learning integration for land cover classification and predictive spatial
+                                modeling.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="transdisciplinary-knowledge-systems" class="py-5 bg-[#0A192F] text-white">
+            <div class="container mx-auto px-8 max-w-6xl">
+
+                <div class="mb-16">
+                    <h3 class="text-3xl font-semibold text-blue-400 border-b-2 border-blue-500 pb-2">
+                        Transdisciplinary & Knowledge Systems Integration
+                    </h3>
+                    <p class="mt-4 text-gray-300">Beyond technical geospatial analysis, I excel in **transdisciplinary
+                        communication** and the integration
+                        of **diverse knowledge systems** for sustainable resource management. My coursework in
+                        **Transdisciplinary Communications** and **Working with Diverse Knowledge Systems in Sustainable
+                        Natural
+                        Resources Management** has equipped me with the ability to bridge Western scientific approaches
+                        with
+                        Indigenous and local perspectives.
+                    </p>
+                    <div class="mt-6 bg-[#1C2C3A] p-6 rounded-lg shadow-lg">
+
+                        <h4 class="text-2xl font-semibold text-blue-400">Key Skills in Knowledge
+                            Integration & Communication</h4>
+                        <ul class="list-disc pl-6 mt-4 text-gray-300">
+                            <li>Conducting **audience analysis** to tailor geospatial and environmental insights for
+                                different
+                                stakeholders.</li>
+                            <li>Developing **persuasive communication strategies** to convey GIS and sustainability
+                                narratives
+                                effectively.</li>
+                            <li>Bridging the gap between **scientific data, Indigenous knowledge, and policy-making**
+                                for
+                                informed decision-making.</li>
+                            <li>Applying **negotiation and conflict resolution** techniques in environmental resource
+                                management.</li>
+                            <li>Collaborating with diverse groups to foster sustainable and inclusive land-use planning.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+From,To,Value
+Water (2019),Water (2024),4927039
+Water (2019),Mangrove (2024),0
+Water (2019),Non-Mangrove (2024),3604486
+Water (2019),Barren Land (2024),372654
+Mangrove (2019),Water (2024),0
+Mangrove (2019),Mangrove (2024),1502935
+Mangrove (2019),Non-Mangrove (2024),904127
+Mangrove (2019),Barren Land (2024),11277
+Non-Mangrove (2019),Water (2024),11165
+Non-Mangrove (2019),Mangrove (2024),683102
+Non-Mangrove (2019),Non-Mangrove (2024),3202511
+Non-Mangrove (2019),Barren Land (2024),627390
+Barren Land (2019),Water (2024),2971
+Barren Land (2019),Mangrove (2024),4458
+Barren Land (2019),Non-Mangrove (2024),4223995
+Barren Land (2019),Barren Land (2024),1592935
